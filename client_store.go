@@ -108,7 +108,7 @@ func (s *ClientStore) GetByID(id string) (oauth2.ClientInfo, error) {
 }
 
 // Create creates and stores the new client information
-func (s *ClientStore) Create(info oauth2.ClientInfo) error {
+func (s *ClientStore) Create(ctx context.Context, info oauth2.ClientInfo) error {
 	data, err := jsoniter.Marshal(info)
 	if err != nil {
 		return err
